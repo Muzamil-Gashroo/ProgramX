@@ -1,0 +1,22 @@
+<!-- https://script.google.com/macros/s/AKfycbwX_sByJvkQGBWWZ0FNERnPji4qegyRkvG4Al_3NDcPFd4Xq6_2M5Nj992ai5qsOYjK/exec  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Open Links</title>
+  <script>
+    async function openLinks() {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwX_sByJvkQGBWWZ0FNERnPji4qegyRkvG4Al_3NDcPFd4Xq6_2M5Nj992ai5qsOYjK/exec');
+      const links = await response.json();
+      
+      for (const link of links) {
+        window.open(link);
+        await new Promise(resolve => setTimeout(resolve, 4000)); // Wait for 4 seconds
+      }
+    }
+  </script>
+</head>
+<body>
+  <button onclick="openLinks()">Open Links</button>
+</body>
+</html>
